@@ -18,8 +18,33 @@ body {
 a {
     color: white;
     text-decoration: none;
+    /* transition: all 3s; */
 
 }
+
+a:hover {
+    color: #dddddd;
+    /* text-decoration: underline; */
+}
+
+/* or 
+a:hover, a:active {
+    color: #dddddd;
+}
+to change both
+*/
+
+a:active {
+    color: #ff0000;
+}
+
+/* a:nth-child(2) {
+    color: #ffa500
+}
+
+a:last-child {
+    color: #ffa500;
+} */
 
 p {
     color: #000000;
@@ -46,8 +71,37 @@ header h3 {
 
 }
 
+/* header h3:after {
+    content: 'hi there';
+}
+
+header h3:before {
+    content: 'hi there';
+} */
+
+header nav a {
+    position: relative;
+}
+
+header h3:after {
+    transform: scale(0,0);
+    transition: 3s;
+}
+
 header nav a:not(:last-child) {
     margin-right: 10px;
+}
+
+header nav a:hover:after {
+    content: 'Hi';
+    width: 100px;
+    height: 5px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transform: scale(1,1)
+
 }
 
 main {
@@ -70,4 +124,15 @@ main section {
 footer {
     background-color: #aaaaaa;
     padding: 30px 5%;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 600px) {
+    .left {
+        background-color: blueviolet;
+    }
+
+    main {
+        flex-direction: column;
+    }
 }
